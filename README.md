@@ -25,3 +25,8 @@ using (var gamepad = new GamepadController("/dev/input/js0"))
 }
 // Remember to Dispose the GamepadController, so it can finish the Task that listens for changes in the gamepad
 ```
+
+
+If you'd like to support this project and the addition of support for other Adafruit HATs, please donate money.
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=UK9A88VUXL9YJ&currency_code=CAD&source=url)
