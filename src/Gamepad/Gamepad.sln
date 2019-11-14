@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29505.145
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamepad.Sample", "Gamepad.Sample\Gamepad.Sample.csproj", "{8DECD028-7198-436B-BB95-F4CFDF41B8C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamepad", "Gamepad\Gamepad.csproj", "{D6CD6ED1-2D08-46C7-BD04-5D3C3A2A027C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DECD028-7198-436B-BB95-F4CFDF41B8C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DECD028-7198-436B-BB95-F4CFDF41B8C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DECD028-7198-436B-BB95-F4CFDF41B8C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DECD028-7198-436B-BB95-F4CFDF41B8C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6CD6ED1-2D08-46C7-BD04-5D3C3A2A027C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6CD6ED1-2D08-46C7-BD04-5D3C3A2A027C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6CD6ED1-2D08-46C7-BD04-5D3C3A2A027C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6CD6ED1-2D08-46C7-BD04-5D3C3A2A027C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AF35CD4-A23D-4EF2-977B-351D00A6908D}
+	EndGlobalSection
+EndGlobal
