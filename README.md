@@ -27,7 +27,7 @@ using (var gamepad = new GamepadController("/dev/input/js0"))
 ```
 
 
-If you are feeling generous and want to support this project, you could buy me a beer to energyze my programming nights using the following button:
+If you are feeling generous and want to support this project, you could buy me a beer to energyze my programming nights using the button below.
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=UK9A88VUXL9YJ&currency_code=CAD&source=url)
 
