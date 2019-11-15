@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
-using System.IO;
-using System.Threading;
 
 namespace Gamepad.Sample
 {
@@ -9,34 +6,26 @@ namespace Gamepad.Sample
     {
         static void Main(string[] args)
         {
-            // If the app is called with "debug" as first argument, it will wait in the following loop for
-            // you to attach to the process to debug. Add a breakpoint within the while, and once you
-            // attach you connect the debugger to the process, manually move the execution outside the while body
-            // so the application can run with the debugger attached from the beginning
-            if (args.Length > 0 && args[0].ToLower().Contains("debug"))
-            {
-                Console.WriteLine("Waiting for debugger to attach...");
-                while (!Debugger.IsAttached)
-                {
-                    Thread.Sleep(100);
-                }
-                Console.WriteLine("Debugger attached.");
-            }
-
+            // You should provide the gamepad file you want to connect to. /dev/input/js0 is the default
             using (var gamepad = new GamepadController("/dev/input/js0"))
             {
+                Console.WriteLine("Start pushing the buttons/axis of your gamepad/joystick to see the output");
+
+                // Configure this if you want to get events when the state of a button changes
                 gamepad.ButtonChanged += (object sender, ButtonEventArgs e) =>
                 {
-                    Console.WriteLine($"Button {e.Button} Pressed: {e.Pressed}");
+                    Console.WriteLine($"Button {e.Button} Changed: {e.Pressed}");
                 };
 
+                // Configure this if you want to get events when the state of an axis changes
                 gamepad.AxisChanged += (object sender, AxisEventArgs e) =>
                 {
-                    Console.WriteLine($"Axis {e.Axis} Pressed: {e.Value}");
+                    Console.WriteLine($"Axis {e.Axis} Changed: {e.Value}");
                 };
 
                 Console.ReadLine();
             }
+            // Remember to Dispose the GamepadController, so it can finish the Task that listens for changes in the gamepad
         }
     }
 }
