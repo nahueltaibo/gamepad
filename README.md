@@ -1,4 +1,7 @@
+<img align="left" height="45" src="src/Gamepad/Gamepad/gamepad.png" alt="Gamepad">
+
 # Gamepad
+
 .Net Core based library, that allows getting the button presses and axis value changes of a gamepad or a Joystick.
 
 The library was developed with Raspberry Pi in mind (but probably runs on any linux based device)
