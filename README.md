@@ -1,4 +1,4 @@
-<img align="left" height="65" src="src/Gamepad/Gamepad/gamepad.png" alt="Gamepad">
+<img align="left" height="65" src="src/Gamepad/gamepad.png" alt="Gamepad">
 
 # Gamepad
 
