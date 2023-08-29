@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: ["master"]
 
+
 env:
   SOLUTION_PATH: src/Gamepad.sln
   PROJECT_PATH: src/Gamepad/Gamepad.csproj
