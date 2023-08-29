@@ -1,40 +1,44 @@
-name: CI - Build and Publish NuGet Package
+name: Build and Publish NuGet Package
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
+env:
+  SOLUTION_PATH: src/Gamepad.sln
+  PROJECT_PATH: src/Gamepad/Gamepad.csproj
+   
+  
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: '3.1'  # Change to the appropriate .NET version
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: "3.1" # Change to the appropriate .NET version
 
-    - name: Restore dependencies
-      run: dotnet restore
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.SOLUTION_PATH }}
 
-    - name: Build solution
-      run: dotnet build --configuration Release
+      - name: Build solution
+        run: dotnet build ${{ env.SOLUTION_PATH }} --configuration Release
 
-    - name: Run tests
-      run: dotnet test --configuration Release
+      - name: Run tests
+        run: dotnet test ${{ env.SOLUTION_PATH }} --configuration Release
 
-    - name: Publish NuGet package
-      run: dotnet pack --configuration Release --output ./nuget-packages
-      working-directory: ./path/to/Gamepad.csproj
+      - name: Publish NuGet package
+        run: dotnet pack ${{ env.PROJECT_PATH }} --configuration Release --output ./nuget-packages
 
-    - name: Publish to NuGet.org
-      uses: nuget/setup-nuget@v1
-      with:
-        nuget-version: 'latest'
-    - name: NuGet Push
-      run: nuget push ./nuget-packages/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+      - name: Publish to NuGet.org
+        uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: "latest"
+      - name: NuGet Push
+        run: nuget push ./nuget-packages/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
