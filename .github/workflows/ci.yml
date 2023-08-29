@@ -41,4 +41,4 @@ jobs:
         with:
           nuget-version: "latest"
       - name: NuGet Push
-        run: nuget push ./nuget-packages/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+        run: nuget push ./nuget-packages/*.nupkg -ApiKey ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
