@@ -10,7 +10,7 @@ env:
   SOLUTION_PATH: src/Gamepad.sln
   PROJECT_PATH: src/Gamepad/Gamepad.csproj
    
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,7 +22,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: "3.1" # Change to the appropriate .NET version
+          dotnet-version: "7.0" # Change to the appropriate .NET version
 
       - name: Restore dependencies
         run: dotnet restore ${{ env.SOLUTION_PATH }}
